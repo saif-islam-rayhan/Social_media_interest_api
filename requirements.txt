@@ -1,0 +1,10 @@
+numpy==1.26.4
+torch==2.1.2
+transformers==4.37.2
+protobuf==4.21.12
+tokenizers
+sentencepiece
+fastapi==0.121.2
+uvicorn[standard]==0.38.0
+pymongo==4.15.4
+pandas==2.3.3
