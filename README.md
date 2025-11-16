@@ -1,33 +1,39 @@
-User Interest API
+🚀 User Interest Detection API
 
-FastAPI service that analyzes social media posts and tracks user interests using AI.
-🚀 Quick Start
-bash
+A FastAPI + MongoDB + Zero-Shot AI service that detects user interests based on posts, likes, and comments.
 
-# Install dependencies
+🔧 Setup (Local)
+Install
 pip install -r requirements.txt
 
-# Run server
-uvicorn main:app --reload --port 9000
+Run
+uvicorn main:app --reload
 
-📌 API Endpoints
+🌐 Deploy on Render
 
-    GET / - Health check
+Build Command
 
-    GET /interests - All users' interests
+pip install -r requirements.txt
 
-    GET /interests/{user_id} - Specific user's interests
 
-🌐 Access
+Start Command
 
-Main URL: http://localhost:9000
-API Docs: http://localhost:9000/docs
-🔧 Features
+uvicorn main:app --host 0.0.0.0 --port $PORT
 
-    AI-powered topic detection (10 categories)
+📡 API Endpoints
 
-    Auto-updates every 30 seconds
+Home: GET /
+All Interests: GET /interests
+User Interest: GET /interests/{user_id}
 
-    MongoDB integration
+🧠 How It Works
 
-    Real-time interest scoring
+Background thread runs every 30 seconds
+
+Fetches posts from MongoDB
+
+Detects topic using Zero-Shot model
+
+Likes = +1, Comments = +2, Own posts = +1
+
+Stores results in memory (user_interests)
