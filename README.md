@@ -7,7 +7,7 @@ Install
 pip install -r requirements.txt
 
 Run
-uvicorn main:app --reload
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 🌐 Deploy on Render
 
